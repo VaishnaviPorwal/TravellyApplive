@@ -41,9 +41,10 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, [posts]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  if(posts.length) {
   return (
     <>
-      {(posts.length)? return {posts.map(
+      {posts.map(
         ({
           _id,
           userId,
@@ -69,11 +70,13 @@ const PostsWidget = ({ userId, isProfile = false }) => {
             comments={comments}
           />
         )
-      )}: retrun "POSTS"}
-      
-    
+      )}
     </>
   );
+  } else {
+    return (
+      <>POSTS</>
+      ); }
 };
 
 export default PostsWidget;
