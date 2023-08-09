@@ -41,7 +41,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, [posts]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if(posts.length) {
+  if(Array.isArray(posts)) {
   return (
     <>
       {posts.map(
